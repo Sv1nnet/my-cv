@@ -1,0 +1,31 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base"],
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["@blocks", "./common.blocks"],
+        ["@vars", "./styles/vars"],
+        ["@assets", "./assets"],
+        ["@", "./"]
+      ]
+    }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["off"],
+    "linebreak-style": ["off", "windows"],
+    "max-len": 0,
+    "guard-for-in": 0,
+    "no-restricted-syntax": 0,
+    "no-underscore-dangle": ["error", { "allowAfterThis": true, "allow": ["_id"] }],
+    "object-curly-newline": ["error", {
+      "ObjectPattern": { "multiline": true },
+      "ImportDeclaration": { "multiline": true, "minProperties": 5 },
+      "ExportDeclaration": { "multiline": true, "minProperties": 6 }
+  }]
+  }
+}

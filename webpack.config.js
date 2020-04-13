@@ -10,6 +10,8 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
+const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
+
 const optimization = () => {
   const config = {
     splitChunks: {
@@ -35,7 +37,7 @@ const cssLoaders = (...extra) => {
       options: {
         hmr: isDev, // update changes without reloading page
         reloadAll: true,
-      }
+      },
     }, // move css in a separated file
     'css-loader', // allows webpack to understand css imports in js files
   ];
@@ -45,7 +47,7 @@ const cssLoaders = (...extra) => {
   }
 
   return cssLoader;
-}
+};
 
 const babelOptions = (...presets) => {
   const opts = {
@@ -62,7 +64,7 @@ const babelOptions = (...presets) => {
   }
 
   return opts;
-}
+};
 
 const jsLoaders = () => {
   let loaders = [{
@@ -75,7 +77,7 @@ const jsLoaders = () => {
   }
 
   return loaders;
-}
+};
 
 const plugins = () => {
   const base = [
@@ -100,7 +102,7 @@ const plugins = () => {
     ]),
     new MiniCssExtractPlugin({ // move css in separated file
       filename: filename('.css'),
-    })
+    }),
   ];
 
   if (isProd) {
@@ -108,9 +110,7 @@ const plugins = () => {
   }
 
   return base;
-}
-
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
+};
 
 module.exports = {
   context: path.resolve(__dirname, 'src'), // Initial folder
@@ -142,7 +142,7 @@ module.exports = {
     port: 4242,
     hot: isDev, // update changes without reloading page
     watchContentBase: true, // make live-reloading happen even when changes are made to the static html pages
-    overlay: { warnings: true, errors: true },  // show error message on the screen
+    overlay: { warnings: true, errors: true }, // show error message on the screen
   },
   devtool: isDev ? 'source-map' : '',
   plugins: plugins(),
