@@ -19,6 +19,7 @@
     "css"
   ],
   "author": "Leonid Tsukanov",
+  "homepage": "https://sv1nnet.github.io/Leonid-Tsukanov-cv",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
