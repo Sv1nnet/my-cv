@@ -5,7 +5,6 @@ import '@blocks/body/__inner/body__inner.scss';
 import '@blocks/body/__inner/media.scss';
 import '@blocks/body/__header/body__header.scss';
 import '@blocks/body/__header/media.scss';
-import '@blocks/body/__projects/body__projects.scss';
 
 import '@blocks/header/header.scss';
 import '@blocks/header/__author/header__author.scss';
