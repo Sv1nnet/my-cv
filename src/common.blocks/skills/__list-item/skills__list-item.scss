@@ -1,0 +1,12 @@
+.skills__list-item {
+  margin-left: 12px;
+  position: relative;
+  list-style-type: none;
+
+  &:before {
+    display: block;
+    content: '-';
+    position: absolute;
+    left: -12px;
+  }
+}
