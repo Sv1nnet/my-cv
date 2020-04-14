@@ -2,13 +2,16 @@
 import 'normalize.css';
 import '@blocks/body/body.scss';
 import '@blocks/body/__inner/body__inner.scss';
+import '@blocks/body/__inner/media.scss';
 import '@blocks/body/__header/body__header.scss';
+import '@blocks/body/__header/media.scss';
 import '@blocks/body/__projects/body__projects.scss';
 
 import '@blocks/header/header.scss';
 import '@blocks/header/__author/header__author.scss';
 import '@blocks/header/__full-name/header__full-name.scss';
 import '@blocks/header/__contacts/header__contacts.scss';
+import '@blocks/header/__contacts/media.scss';
 import '@blocks/header/__profession/header__profession.scss';
 
 import '@blocks/main/main.scss';
@@ -23,6 +26,7 @@ import '@blocks/projects/__title/projects__title.scss';
 import '@blocks/projects/__title-explanation/projects__title-explanation.scss';
 
 import '@blocks/section-title/section-title.scss';
+import '@blocks/section-title/media.scss';
 
 import '@blocks/contact-link/contact-link.scss';
 
