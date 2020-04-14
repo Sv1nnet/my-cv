@@ -86,7 +86,6 @@ const plugins = () => {
       minify: {
         collapseWhitespace: isProd, // remove whitespace from .html file
       },
-      excludeChunks: ['script-imports'],
       inject: true,
     }),
     new CleanWebpackPlugin(), // clean dist from old files
