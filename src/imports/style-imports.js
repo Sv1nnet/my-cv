@@ -16,6 +16,7 @@ import '@blocks/header/__profession/header__profession.scss';
 import '@blocks/main/main.scss';
 import '@blocks/main/__projects/main__projects.scss';
 import '@blocks/main/__skills/main__skills.scss';
+import '@blocks/main/__skills/media.scss';
 import '@blocks/main/__section-title/main__section-title.scss';
 import '@blocks/main/__experience/main__experience.scss';
 
