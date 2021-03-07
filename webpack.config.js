@@ -137,7 +137,7 @@ module.exports = {
   },
   optimization: optimization(), // allows to move multiple imports in a single separated file
   devServer: {
-    host: '192.168.0.10',
+    host: '192.168.0.11',
     port: 4242,
     hot: isDev, // update changes without reloading page
     watchContentBase: true, // make live-reloading happen even when changes are made to the static html pages

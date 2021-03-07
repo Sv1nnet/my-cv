@@ -20,6 +20,7 @@ import '@blocks/main/__skills/main__skills.scss';
 import '@blocks/main/__skills/media.scss';
 import '@blocks/main/__section-title/main__section-title.scss';
 import '@blocks/main/__experience/main__experience.scss';
+import '@blocks/main/__experience/media.scss';
 
 import '@blocks/projects/projects.scss';
 import '@blocks/projects/__project-wrapper/projects__project-wrapper.scss';
@@ -42,3 +43,7 @@ import '@blocks/contacts/__text/contacts__text.scss';
 import '@blocks/skills/skills.scss';
 import '@blocks/skills/__ul/skills__ul.scss';
 import '@blocks/skills/__list-item/skills__list-item.scss';
+
+import '@blocks/work/work.scss';
+import '@blocks/work/__projects/work__projects.scss';
+import '@blocks/work/__projects-ul/work__projects-ul.scss';
