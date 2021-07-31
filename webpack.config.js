@@ -54,9 +54,6 @@ const babelOptions = (...presets) => {
     presets: [
       '@babel/preset-env',
     ],
-    plugins: [
-      '@babel/plugin-proposal-class-properties',
-    ],
   };
 
   if (presets) {
@@ -82,6 +79,15 @@ const jsLoaders = () => {
 const plugins = () => {
   const base = [
     new HTMLWebpackPlugin({ // injects files into .html
+      filename: 'ru.html',
+      template: './ru.html', // set source .html file
+      minify: {
+        collapseWhitespace: isProd, // remove whitespace from .html file
+      },
+      inject: true,
+    }),
+    new HTMLWebpackPlugin({ // injects files into .html
+      filename: 'index.html',
       template: './index.html', // set source .html file
       minify: {
         collapseWhitespace: isProd, // remove whitespace from .html file
@@ -114,10 +120,7 @@ const plugins = () => {
 module.exports = {
   context: path.resolve(__dirname, 'src'), // Initial folder
   mode: 'development', // default build mode
-  entry: { // files where webpack starts building
-    main: ['@babel/polyfill', './index.js'], // 'name of final file': 'paths to files'
-    'script-imports': ['./imports/script-imports.js'], // 'name of final file': 'paths to files'
-  },
+  entry: './common.blocks/root.scss',
   output: {
     filename: filename('js'), // [name] - name of entry field; [contenthash] - file hash;
     path: path.resolve(__dirname, 'dist'), // build destination
@@ -127,6 +130,7 @@ module.exports = {
       '.js',
       '.json',
       '.png',
+      '.scss',
     ],
     alias: { // path names for import; in import we can specify alias instead of relative path
       '@blocks': path.resolve(__dirname, 'src/common.blocks'),
@@ -137,7 +141,7 @@ module.exports = {
   },
   optimization: optimization(), // allows to move multiple imports in a single separated file
   devServer: {
-    host: '192.168.0.11',
+    host: '192.168.0.10',
     port: 4242,
     hot: isDev, // update changes without reloading page
     watchContentBase: true, // make live-reloading happen even when changes are made to the static html pages
@@ -166,11 +170,6 @@ module.exports = {
         use: [
           'file-loader',
         ],
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: jsLoaders(),
       },
     ],
   },
