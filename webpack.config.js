@@ -12,6 +12,8 @@ const isProd = !isDev;
 
 const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 
+const [ localIp ] = Object.values(require('os').networkInterfaces()).reduce((r, list) => r.concat(list.reduce((rr, i) => rr.concat(i.family==='IPv4' && !i.internal && i.address || []), [])), [])
+
 const optimization = () => {
   const config = {
     splitChunks: {
@@ -85,6 +87,7 @@ const plugins = () => {
         collapseWhitespace: isProd, // remove whitespace from .html file
       },
       inject: true,
+      langLink: isDev ? '/index.html' : '/Leonid-Tsukanov-cv/index.html',
     }),
     new HTMLWebpackPlugin({ // injects files into .html
       filename: 'index.html',
@@ -93,6 +96,7 @@ const plugins = () => {
         collapseWhitespace: isProd, // remove whitespace from .html file
       },
       inject: true,
+      langLink: isDev ? '/ru.html' : '/Leonid-Tsukanov-cv/ru.html',
     }),
     new CleanWebpackPlugin(), // clean dist from old files
     new CopyWebpackPlugin([ // Copy any files
@@ -141,7 +145,7 @@ module.exports = {
   },
   optimization: optimization(), // allows to move multiple imports in a single separated file
   devServer: {
-    host: '192.168.0.10',
+    host: localIp,
     port: 4242,
     hot: isDev, // update changes without reloading page
     watchContentBase: true, // make live-reloading happen even when changes are made to the static html pages

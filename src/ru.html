@@ -7,25 +7,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <title>Leonid Tsukanov CV</title>
+  <title>Леонид Цуканов CV</title>
 </head>
 
 <body class="body">
   <div class="body__inner">
     <nav class="nav body__nav">
       <ul class="nav__ul">
-        <li class="nav__list-item"><a href="/"><span class="text">Eng</span></a></li>
+        <li class="nav__list-item">
+          <a href="<%= htmlWebpackPlugin.options.langLink %>">
+            <span class="text">Eng</span>
+          </a>
+        </li>
         <li class="nav__list-item">
           <div class="nav__list-item-divider"></div>
         </li>
-        <li class="nav__list-item"><span class="text">Ru</span></li>
+        <li class="nav__list-item">
+          <span class="text">Ru</span>
+        </li>
       </ul>
     </nav>
 
     <header class="header body__header">
       <div class="header__author">
         <h1 class="header__full-name">Леонид Цуканов</h1>
-        <p class="text_ff_open-sans header__profession">Front-End Developer (Junior+ / Junior-to-Middle)</p>
+        <p class="text_ff_open-sans header__profession">Front-End Developer</p>
         <a target="_blank" href="https://github.com/Sv1nnet" class="contact-link">https://github.com/Sv1nnet</a>
       </div>
 
@@ -112,6 +118,11 @@
             <span class="text">Знаю поверхностно/редко использовал:</span>
             <li class="skills__list-item">
               <span class="text">
+                <span class="text_fw_bold">Vue.js</span>;
+              </span>
+            </li>
+            <li class="skills__list-item">
+              <span class="text">
                 <span class="text_fw_bold">Git</span> - чаще всего использовал "checkout", "commit", "add" и другие часто используемые команды;
               </span>
             </li>
@@ -150,7 +161,7 @@
             <li class="skills__list-item">
               <span class="text">
                 <span class="text_fw_bold">Английский</span> на уровне чтения документации, просмотра выступлений с
-                конференций, видео-уроков; разговорный - B1 (pre-intermediate);
+                конференций, видео-уроков; разговорный - pre-intermediate;
               </span>
             </li>
           </ul>
@@ -206,7 +217,7 @@
           </ul>
 
           <span class="text">
-            Разработка административной панели на <span class="text_fw_bold">React-Admin</span>:
+            Разработка административных панели на <span class="text_fw_bold">React</span>(преимущественно) и <span class="text_fw_bold">Vue</span>:
           </span>
           <ul class="work__projects-ul">
             <li class="skills__list-item">
@@ -214,6 +225,9 @@
             </li>
             <li class="skills__list-item">
               <span class="text">разработка настраиваемых таблиц: пользователь может изменять ширину колонок, их порядок (Drag'n'Drop), количество; настройки сохранялись у клиента и восстанавливались при повторном заходе на страницу или в раздел с таблицей;</span>
+            </li>
+            <li class="skills__list-item">
+              <span class="text">разработка гибко настраиваемых фильтров к таблицам с возможностью их синхронизацией с url параметрами;</span>
             </li>
             <li class="skills__list-item">
               <span class="text">настройка линтера и приведение кодовой базы и файловой структуры в порядок;</span>
@@ -225,6 +239,10 @@
               <span class="text">помощь младшему разработчику;</span>
             </li>
           </ul>
+
+          <span class="text">
+            Доработка портала для поиска мероприятий в Москве на <span class="text_fw_bold">Next.js</span>;
+          </span>
         </div>
 
         <div class="projects main__projects">
