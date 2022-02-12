@@ -110,7 +110,7 @@ const plugins = () => {
       },
     ]),
     new MiniCssExtractPlugin({ // move css in separated file
-      filename: filename('.css'),
+      filename: filename('css'),
     }),
   ];
 
